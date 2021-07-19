@@ -1,0 +1,27 @@
+version: "3"
+services:
+        server1:
+                build: ./flask-app
+                container_name: server1
+                ports:
+                - "5001:5000"
+        server2:
+                build: ./flask-app
+                container_name: server2
+                ports:
+                - "5002:5000"
+        server3:
+                build: ./flask-app
+                container_name: server3
+                ports:
+                - "5003:5000"
+        server4:
+                build: ./flask-app
+                container_name: server4
+                ports:
+                - "5004:5000"
+        nginx:
+                build: ./nginx-proxy
+                container_name: nginx
+                ports:
+                - "8888:8888"
