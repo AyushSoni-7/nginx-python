@@ -9,10 +9,10 @@ def headers(metadata):
     data = {
         "message": "This is the base page",
         "host": metadata.get("Host", "NULL"),
-        "forward_for": metadata.get("X-Forwarded-For", "NULL"),
+        "client_ip": metadata.get("X-Forwarded-For", "NULL"),
         "forwarded_proto": metadata.get("X-Forwarded-Proto", "NULL"),
         "host_name": host_name,
-        "host_ip": socket.gethostbyname(host_name)
+        "server_ip": socket.gethostbyname(host_name)
     }
     return data
 
