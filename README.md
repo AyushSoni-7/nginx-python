@@ -45,6 +45,3 @@ You can see the result in server_ip
 ### lb_tcp.conf
 
 This is layer 4 load balacing. You can not configure any application based routing pattern in this configuration as load balacing is taking place at layer 4(tcp) layer. In these configuration nginx create some iptables rules which proxy the request to different server. Allocation of server is random in this load balacing.
-
- 
-- 
