@@ -19,7 +19,7 @@ This is a repo where some nginx template has been used to configure.
 	- `docker-compose up -d`
 	This will spin up the all five containers. 
 - For testing the nginx lb. You can run following commands:
-	- `for x in {1..20}; do; curl localhost:8888; sleep(5); done`
+	- `for x in {1..20}; do; curl localhost:8888; sleep 5; done`
 	You will see each request going to different **server_ip** in case of round robin.
 - To test different lb configuration. Change the value of argument(nginx_conf_filepath) for dockerfile in docker-compose.yaml at line no 28. You have four option located in nginx_proxy/conf_template
 - To destroy the containers once tested use:
@@ -36,8 +36,8 @@ This also perform application layer(L7) load balacing. It will a hash value base
 ### lb_routing.conf
 This is also Layer 7 load balacing. It will forward the request based on routing set on configuration. There are two routes set /blue and / will send the route to server1 and server2 and /green will forward the traffic to server3 and server4 in round robin manner. 
 To test this you can use the following command:
-- `for x in {1..20}; do; curl localhost:8888/blue; sleep(5); done`
-- `for x in {1..20}; do; curl localhost:8888/green; sleep(5); done`
+- `for x in {1..20}; do; curl localhost:8888/blue; sleep 5; done`
+- `for x in {1..20}; do; curl localhost:8888/green; sleep 5; done`
 You can see the result in server_ip
 
 ### lb_tcp.conf
