@@ -17,9 +17,11 @@ This is a repo where some nginx template has been used to configure.
 - Docker compose is used to set up the containers. To run the application run following commands:
 	- `docker-compose build`
 	- `docker-compose up -d`
+	
 	This will spin up the all five containers. 
 - For testing the nginx lb. You can run following commands:
 	- `for x in {1..20}; do; curl localhost:8888; sleep 5; done`
+	
 	You will see each request going to different **server_ip** in case of round robin.
 - To test different lb configuration. Change the value of argument(nginx_conf_filepath) for dockerfile in docker-compose.yaml at line no 28. You have four option located in nginx_proxy/conf_template
 - To destroy the containers once tested use:
